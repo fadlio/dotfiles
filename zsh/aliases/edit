@@ -1,0 +1,7 @@
+alias e_termite="nvim ~/dotfiles/termite"
+alias e_zsh="nvim ~/dotfiles/zsh/zshrc"
+alias e_nvim="nvim ~/dotfiles/nvim/init.vim"
+alias e_alias_index="nvim ~/dotfiles/zsh/aliases/index"
+alias e_alias_general="nvim ~/dotfiles/zsh/aliases/general"
+alias e_alias_edit="nvim ~/dotfiles/zsh/aliases/edit"
+alias e_alias_git="nvim ~/dotfiles/zsh/aliases/git"

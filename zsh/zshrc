@@ -1,0 +1,6 @@
+source ~/.zplug/init.zsh
+# zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
+zplug "geometry-zsh/geometry", use:geometry.zsh, as:theme
+zplug load 
+
+source ~/.config/aliases/index

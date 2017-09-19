@@ -1,0 +1,14 @@
+- defaults:
+    link:
+      relink: true
+      force: true
+      create: true
+
+- clean: ['~']
+
+- link:
+    ~/.zshrc: zsh/zshrc
+    ~/.config/aliases: zsh/aliases
+    ~/.i3: i3
+    ~/.config/termite/config: termite
+    ~/.config/nvim: nvim
