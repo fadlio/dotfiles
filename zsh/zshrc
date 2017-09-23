@@ -1,4 +1,9 @@
 source ~/.zplug/init.zsh
+# teste de sincronia
+#
+#
+#
+#
 # zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
 zplug "geometry-zsh/geometry", use:geometry.zsh, as:theme
 zplug load 
