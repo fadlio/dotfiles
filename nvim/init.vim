@@ -11,41 +11,42 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline-themes'
   Plug 'airblade/vim-gitgutter'
 " completion/templating
+  Plug 'Valloric/YouCompleteMe'
   Plug 'jiangmiao/auto-pairs'
   Plug 'scrooloose/nerdcommenter'
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
 " command extention
   Plug 'easymotion/vim-easymotion'
+  Plug 'haya14busa/incsearch-easymotion.vim'
   Plug 'wellle/targets.vim'
   Plug 'tpope/vim-surround'
   Plug 'junegunn/vim-easy-align'
   Plug 'wellle/targets.vim'
   Plug 'terryma/vim-multiple-cursors'
 " utils
+  Plug 'vim-syntastic/syntastic'
   Plug 'neomake/neomake'
   Plug 'kassio/neoterm'
   Plug 'sjl/gundo.vim'
   Plug 'chrisbra/NrrwRgn'
 " misc
   Plug 'asins/vimcdoc'
-  Plug 'CodeFalling/fcitx-vim-osx'
-  "Plug 'lilydjwg/fcitx.vim'
   Plug 'junegunn/vim-github-dashboard'
 " documentation
   Plug 'rhysd/nyaovim-markdown-preview'
   Plug 'xolox/vim-notes'
   Plug 'xolox/vim-misc'
   Plug 'itchyny/calendar.vim'
-  Plug 'junegunn/vim-journal'
 " navigation
+  Plug 'haya14busa/incsearch.vim'
   Plug 'scrooloose/nerdtree'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'wesleyche/SrcExpl'
   Plug 'majutsushi/tagbar'
   Plug 'rizzatti/dash.vim'
   Plug 'eugen0329/vim-esearch'
-
+" theme
   Plug 'joshdick/onedark.vim'
 call plug#end()
 
@@ -83,7 +84,21 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
   " \\ => go to command mode
     imap <leader><leader> <esc>:
   " go => go to anywhere
-    nmap go <Plug>(easymotion-jumptoanywhere)
+    nmap go <Plug>(easymotion-s2)
+    map /  <Plug>(incsearch-forward)
+    map ?  <Plug>(incsearch-backward)
+    map g/ <Plug>(incsearch-stay)
+    set hlsearch
+    let g:incsearch#auto_nohlsearch = 1
+    map n  <Plug>(incsearch-nohl-n)
+    map N  <Plug>(incsearch-nohl-N)
+    map *  <Plug>(incsearch-nohl-*)
+    map #  <Plug>(incsearch-nohl-#)
+    map g* <Plug>(incsearch-nohl-g*)
+    map g# <Plug>(incsearch-nohl-g#)
+    map z/ <Plug>(incsearch-easymotion-/)
+    map z? <Plug>(incsearch-easymotion-?)
+    map zg/ <Plug>(incsearch-easymotion-stay)
   " <c-v> => for pasting
     imap <c-v> <esc>"+pa
   " <c-h/j/k/l> => hjkl in normal mode (but there is a bug mapping <c-h>)
@@ -160,7 +175,7 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
   " \g => scroll to bottom in markdown preview (insert mode)
     imap <leader>g <esc><leader>Ga
   " \jd => GoTo the definition
-    "nnoremap <leader>jd :YcmCompleter GoTo<CR>
+    nnoremap <leader>jd :YcmCompleter GoTo<CR>
   " \e => edit only current/selected line(s) in normal/visual mode
   " z + [fFtTwWbBeE(ge)(gE)jknNs] => easy motion
     map zf <Leader><Leader>f
